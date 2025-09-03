@@ -1,0 +1,282 @@
+{
+    "youtube":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for Youtube spam classification. Categories include HAM and SPAM. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the category of this youtube comment: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for Youtube spam classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for Youtube spam classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category comment on Youtube as spam or ham. Categories include spam, and ham.",
+        "mission_statement": "Write a bug-free and executable function in python to label comment on Youtube as spam or ham.",
+        "labeling_instruction": "If the comment is spam, function returns 1.\nIf the comment is ham, function returns 0.\nIf the comment cannot be determined as spam or ham, function returns -1.",
+        "function_signature": "def label_function(comment):"
+    },
+    "sms":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for SMS spam classification. Categories include ham and spam. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the category of this sms text: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for SMS spam classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for SMS spam classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category sms text as spam or ham. Categories include spam, and ham.",
+        "mission_statement": "Write a bug-free and executable function in python to label SMS text as spam or ham.",
+        "labeling_instruction": "If the text is spam, function returns 1.\nIf the comment is ham, function returns 0.\nIf the comment cannot be determined as spam or ham, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    "imdb":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for movie review sentiment classification. Categories include Negative and Positive. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the sentiment of this movie review: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for movie review sentiment classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for movie review sentiment classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the sentiment of movie review on IMDB as postive or negative. Categories include postive and negative.",
+        "mission_statement": "Write a bug-free and executable function in python to label the sentiment of movie review on IMDB as postive or negative",
+        "labeling_instruction": "If the movie review sounds positive, function returns 1.\nIf the movie review sounds negative, function returns 0.\nIf the movie review cannot be determined to be positive or negative, return -1.",
+        "function_signature": "def label_function(movie_review):"
+    },
+    "yelp":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for restaurant review sentiment classification. Categories include Negative and Positive. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the sentiment of this restaurant review: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for restaurant review sentiment classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for restaurant review sentiment classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the sentiment of restaurant review on Yelp as postive or negative. Categories include postive, and negative.",
+        "mission_statement": "Write a bug-free and executable function in python to label the sentiment of restaurant review on Yelp as postive or negative.",
+        "labeling_instruction": "If the restaurant review sounds positive, function returns 1.\nIf the restaurant review sounds negative, function returns 0.\nIf the restaurant review cannot be determined to be positive or negative, return -1.",
+        "function_signature": "def label_function(restaurant_review):"
+    },
+    "agnews":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for news topic classification. Categories include World, Sports, Business, and Sci/Tech. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the topic of this news: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for news topic classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for news topic classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the news topic. News topics includes world news, sport news, business news, and science/tech news.",
+        "mission_statement": "Write a bug-free and executable function in python to label the topic of news.",
+        "labeling_instruction": "If the news is categorized as world news, function returns 0.\nIf the news is categorized as sport news, function returns 1.\nIf the news is categorized as business news, function returns 2.\nIf the news is categorized as science or tech news, function returns 3.\nIf the news cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(news):"
+    },
+    "medabs":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for medical abstract topic classification. Categories include neoplasms, digestive system diseases, nervous system diseases, cardiovascular diseases, and general pathological conditions. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the topic of this abstract: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for medical abstract topic classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for medical abstract topic classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the topic of medical abstract. Abstract topic includes neoplasms, digestive system diseases, nervous system diseases, cardiovascular diseases, and general pathological conditions.",
+        "mission_statement": "Write a bug-free and executable function in python to label the topic of medical abstract.",
+        "labeling_instruction": "If the abstract is about neoplasms, function returns 0.\nIf the abstract is about digestive system diseases, function returns 1.\nIf the abstract is about nervous system diseases, function returns 2.\nIf the abstract is about cardiovascular diseases, function returns 3.\nIf the abstract is about general pathological conditions, function returns 4.\nIf the abstract cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(abstract):"
+    },
+    "cancer":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for biomedical document topic classification. Categories include Colon_Cancer, Lung_Cancer, and Thyroid_Cancer. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the topic of this document: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for biomedical document topic classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for biomedical document topic classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the topic of biomedical document. Document topic includes colon cancer, lung cancer, and thyroid cancer.",
+        "mission_statement": "Write a bug-free and executable function in python to label the topic of biomedical document.",
+        "labeling_instruction": "If the document is about colon cancer, function returns 0.\nIf the document is about lung cancer, function returns 1.\nIf the document is about thyroid cancer, function returns 2.\nIf the document cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(document):"
+    },
+    "reddit":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for reddit topic classification. Categories include Chemistry, Biology, and Physics. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the topic of this comment: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for reddit topic classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for reddit topic classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the topic of reddit comment. Comment topic includes physics, chemistry, and biology.",
+        "mission_statement": "Write a bug-free and executable function in python to label the topic of reddit comment.",
+        "labeling_instruction": "If the document is about chemistry, function returns 0.\nIf the document is about biology, function returns 1.\nIf the document is about physics, function returns 2.\nIf the document cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(reddit_comment):"
+    },
+    "french":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for book review sentiment classification. Book review is written in the French language. Categories include positive, neutral, and negative. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the sentiment of this book review: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for book review sentiment classification. Book review is written in the French language.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for book review sentiment classification. Book review is written in the French language. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the sentiment of book review written in French. Categories include postive, neutral, and negative.",
+        "mission_statement": "Write a bug-free and executable function in python to label the sentiment of book review written in French as postive, neutral, or negative.",
+        "labeling_instruction": "If the book review sounds positive, function returns 2.\nIf the movie review sounds neutral, function returns 1.\nIf the book review sounds negative, function return 0.\nIf the movie review cannot be determined to be postive, neutral, or negative, return -1.",
+        "function_signature": "def label_function(book_review):"
+    },
+    "finance":{
+        "prompting_system_prompt": "You are a helpful assistant to produce labels for financial news sentiment classification. Categories include positive, neutral, and negative. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+        "prompting_mission_statement": "what is the sentiment of this news: [text]",
+        "llm_system_prompt": "You are a helpful assistant to provide useful information for financial news sentiment classification.",
+        "codellm_system_prompt": "You are a helpful assistant to write labeling function for financial news sentiment classification. Be creative and original. Labeling function should consider conditions globally and wisely.",
+        "prior_knowledge": "Generate [prior knowledge] to help users category the sentiment of financial news. Categories include postive, neutral, and negative.",
+        "mission_statement": "Write a bug-free and executable function in python to label the sentiment of financial news as postive, neutral, or negative.",
+        "labeling_instruction": "If the news sounds positive, function returns 2.\nIf the news sounds neutral, function returns 1.\nIf the news sounds negative, function return 0.\nIf the news cannot be determined to be postive, neutral, or negative, return -1.",
+        "function_signature": "def label_function(financial_news):"
+    },
+    "clickbait": {
+    "prompting_system_prompt": "You are a helpful assistant to produce labels for clickbait classification. Categories include clickbait and non-clickbait. Please return answer in json format as {'class': 'your_prediction'}. Use the exact name of category and include it only.",
+    "prompting_mission_statement": "what is the category of this headline or post: [text]",
+    "llm_system_prompt": "You are a helpful assistant to provide useful information for clickbait classification.",
+    "codellm_system_prompt": "You are a helpful assistant to write labeling function for clickbait classification. Be creative and original. Labeling function should consider clickbait-inducing phrases, sensational tone, misleading hooks, and exaggerated curiosity gaps.",
+    "prior_knowledge": "Generate prior knowledge to help users categorize the text as clickbait or non-clickbait. Clickbait often includes exaggerated language, sensationalism, emotional triggers, or curiosity gaps, such as 'You won't believe', 'This will shock you', 'What happens next will...', etc. Non-clickbait tends to be informative, objective, and direct.",
+    "mission_statement": "Write a bug-free and executable function in Python to label a headline or post as clickbait or non-clickbait.",
+    "labeling_instruction": "If the text is clearly clickbait, function returns 1.\nIf the text is clearly non-clickbait, function returns 0.\nIf the text cannot be determined as clickbait or non-clickbait, function returns -1.",
+    "function_signature": "def label_function(text):"
+    },
+    "trec":{
+        "codellm_system_prompt": "",
+        "mission_statement": "",
+        "labeling_instruction": "",
+        "function_signature": ""
+    },
+    "spouse":{
+        "codellm_system_prompt": "",
+        "mission_statement": "",
+        "labeling_instruction": "",
+        "function_signature": ""
+    },
+    "cdr":{
+        "codellm_system_prompt": "",
+        "mission_statement": "",
+        "labeling_instruction": "",
+        "function_signature": ""
+    },
+    "semeval":{
+        "codellm_system_prompt": "",
+        "mission_statement": "",
+        "labeling_instruction": "",
+        "function_signature": ""
+    },
+    "census":{
+        "codellm_system_prompt": "",
+        "mission_statement": "",
+        "labeling_instruction": "",
+        "function_signature": ""
+    },
+    "massive": {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for intent classification in voice assistant utterances. Be comprehensive and precise. Labeling function should consider user intent from both direct and implied context in natural English commands.",
+        "mission_statement": "Write a bug-free and executable function in Python to label the user intent of an English utterance given to a voice assistant.",
+        "labeling_instruction": "If the utterance is related to alarm setting or querying, function returns 0.\nIf the utterance concerns audio settings or control, function returns 1.\nIf the utterance is about Internet of Things (IoT) devices, function returns 2.\nIf the utterance involves calendar events, function returns 3.\nIf the utterance is a request to play media, function returns 4.\nIf the utterance is a general request or unclear, function returns 5.\nIf the utterance relates to dates or times, function returns 6.\nIf the utterance concerns food ordering or takeaway, function returns 7.\nIf the utterance is about news, function returns 8.\nIf the utterance is about music or music playback, function returns 9.\nIf the utterance is about the weather, function returns 10.\nIf the utterance is a factual question (Q&A), function returns 11.\nIf the utterance involves social media or messaging, function returns 12.\nIf the utterance requests a recommendation (e.g. restaurants, music), function returns 13.\nIf the utterance is about cooking or recipes, function returns 14.\nIf the utterance involves transportation or travel, function returns 15.\nIf the utterance concerns email, function returns 16.\nIf the utterance involves task or shopping lists, function returns 17.\nIf the utterance cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(utterance):"
+    },
+    "claude": {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying potentially unfair contractual terms in Terms of Service documents. Be thoughtful and precise. Consider legal phrasing and implications typical in digital service agreements.",
+        "mission_statement": "Write a bug-free and executable function in Python to label the type of potentially unfair clause in a sentence from Terms of Service.",
+        "labeling_instruction": "If the sentence includes a clause limiting the platform's liability, function returns 0.\nIf the sentence allows the platform to unilaterally terminate the service, function returns 1.\nIf the sentence allows the platform to unilaterally change the contract terms, function returns 2.\nIf the sentence allows the platform to remove or block user content, function returns 3.\nIf the sentence implies that a contract is formed simply by using the service, function returns 4.\nIf the sentence chooses a specific national law to govern the contract, function returns 5.\nIf the sentence assigns disputes to a specific court or jurisdiction, function returns 6.\nIf the sentence requires arbitration instead of court proceedings, function returns 7.\nIf the sentence includes other types of potentially unfair terms not listed above, function returns 8.\nIf the sentence cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(sentence):"
+    },
+    "chemprot": {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for chemical-protein relation classification. Be precise and comprehensive. Consider syntactic and semantic clues within biomedical abstracts. Relationships include regulatory, functional, structural, and biochemical types.",
+        "mission_statement": "Write a bug-free and executable function in python to label the type of chemical-protein relation from a biomedical sentence.",
+        "labeling_instruction": "If the sentence describes a 'Part of' relationship between a chemical and a protein, function returns 0.\nIf the chemical acts as a regulator of the protein, function returns 1.\nIf the chemical upregulates the protein, function returns 2.\nIf the chemical downregulates the protein, function returns 3.\nIf the chemical is an agonist for the protein, function returns 4.\nIf the chemical is an antagonist of the protein, function returns 5.\nIf the chemical modulates the protein's function, function returns 6.\nIf the chemical serves as a cofactor to the protein, function returns 7.\nIf the chemical is a substrate or product in a reaction involving the protein, function returns 8.\nIf the sentence does not express any valid relation between chemical and protein, function returns 9.\nIf the relation cannot be determined, function returns -1.",
+        "function_signature": "def label_function(sentence):"
+    },
+    "paper": [
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a scientific paper belongs to Computer Science or not. Be precise and focus on scientific content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Computer Science.",
+        "labeling_instruction": "If the text is not about Computer Science, function returns 0.\nIf the text is about Computer Science, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a scientific paper belongs to Physics or not. Be precise and focus on scientific content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Physics.",
+        "labeling_instruction": "If the text is not about Physics, function returns 0.\nIf the text is about Physics, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a scientific paper belongs to Mathematics or not. Be precise and focus on scientific content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Mathematics.",
+        "labeling_instruction": "If the text is not about Mathematics, function returns 0.\nIf the text is about Mathematics, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a scientific paper belongs to Statistics or not. Be precise and focus on scientific content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Statistics.",
+        "labeling_instruction": "If the text is not about Statistics, function returns 0.\nIf the text is about Statistics, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a scientific paper belongs to Quantitative Biology or not. Be precise and focus on scientific content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Quantitative Biology.",
+        "labeling_instruction": "If the text is not about Quantitative Biology, function returns 0.\nIf the text is about Quantitative Biology, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a scientific paper belongs to Quantitative Finance or not. Be precise and focus on scientific content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Quantitative Finance.",
+        "labeling_instruction": "If the text is not about Quantitative Finance, function returns 0.\nIf the text is about Quantitative Finance, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    }],
+    "pubmed": [
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Anatomy [A] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Anatomy.",
+        "labeling_instruction": "If the text is not about Anatomy, function returns 0.\nIf the text is about Anatomy, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Organisms [B] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Organisms.",
+        "labeling_instruction": "If the text is not about Organisms, function returns 0.\nIf the text is about Organisms, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Diseases [C] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Diseases.",
+        "labeling_instruction": "If the text is not about Diseases, function returns 0.\nIf the text is about Diseases, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Chemicals and Drugs [D] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Chemicals and Drugs.",
+        "labeling_instruction": "If the text is not about Chemicals and Drugs, function returns 0.\nIf the text is about Chemicals and Drugs, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Analytical, Diagnostic and Therapeutic Techniques, and Equipment [E] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Analytical, Diagnostic and Therapeutic Techniques, and Equipment.",
+        "labeling_instruction": "If the text is not about Analytical, Diagnostic and Therapeutic Techniques, and Equipment, function returns 0.\nIf the text is about Analytical, Diagnostic and Therapeutic Techniques, and Equipment, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Psychiatry and Psychology [F] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Psychiatry and Psychology.",
+        "labeling_instruction": "If the text is not about Psychiatry and Psychology, function returns 0.\nIf the text is about Psychiatry and Psychology, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Phenomena and Processes [G] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Phenomena and Processes.",
+        "labeling_instruction": "If the text is not about Phenomena and Processes, function returns 0.\nIf the text is about Phenomena and Processes, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Disciplines and Occupations [H] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Disciplines and Occupations.",
+        "labeling_instruction": "If the text is not about Disciplines and Occupations, function returns 0.\nIf the text is about Disciplines and Occupations, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Anthropology, Education, Sociology, and Social Phenomena [I] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Anthropology, Education, Sociology, and Social Phenomena.",
+        "labeling_instruction": "If the text is not about Anthropology, Education, Sociology, and Social Phenomena, function returns 0.\nIf the text is about Anthropology, Education, Sociology, and Social Phenomena, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Technology, Industry, and Agriculture [J] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Technology, Industry, and Agriculture.",
+        "labeling_instruction": "If the text is not about Technology, Industry, and Agriculture, function returns 0.\nIf the text is about Technology, Industry, and Agriculture, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Information Science [L] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Information Science.",
+        "labeling_instruction": "If the text is not about Information Science, function returns 0.\nIf the text is about Information Science, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Named Groups [M] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Named Groups.",
+        "labeling_instruction": "If the text is not about Named Groups, function returns 0.\nIf the text is about Named Groups, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Health Care [N] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Health Care.",
+        "labeling_instruction": "If the text is not about Health Care, function returns 0.\nIf the text is about Health Care, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    },
+    {
+        "codellm_system_prompt": "You are a helpful assistant to write labeling functions for classifying whether a biomedical research article belongs to Geographicals [Z] or not. Be precise and focus on biomedical content.",
+        "mission_statement": "Write a bug-free and executable function in Python to label whether a text is about Geographicals.",
+        "labeling_instruction": "If the text is not about Geographicals, function returns 0.\nIf the text is about Geographicals, function returns 1.\nIf the text cannot be categorized, function returns -1.",
+        "function_signature": "def label_function(text):"
+    }]
+}
