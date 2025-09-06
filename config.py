@@ -8,8 +8,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import WebBaseLoader, TextLoader, PyPDFLoader, CSVLoader, WikipediaLoader
 
 load_dotenv()
-OPENAI_API_KEY = "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"
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+OPENAI_API_KEY = "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"
+QWEN_API_KEY = "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"
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")  
 CUDA_DEVICE = os.getenv("CUDA_VISIBLE_DEVICES", "0")
 
 def get_docs_for_rag(external_knowledge_base_path, link_paths):
@@ -136,9 +137,9 @@ def collect_args():
     #     (leave blank for default 'gpt-3.5-turbo')\n\
     #     Enter: ").strip().lower() or "a"
     
-    code_llm_enter = "b"
+    code_llm_enter = "e"
 
-    if code_llm_enter not in ["a", "b", "c", "d"]:
+    if code_llm_enter not in ["a", "b", "c", "d", "e"]:
         raise ValueError("Select invalid codellm!")
         
     args['codellm'] = option_table["codellm"][code_llm_enter]
@@ -155,6 +156,7 @@ def collect_args():
             Enter: ").strip().lower() or "a"
 
         # e: llama2-7b, \n\
+        llm_enter = "e"
         
         args['llm'] = option_table["llm"][llm_enter]
         
@@ -173,7 +175,7 @@ def collect_args():
             Enter: ").strip().lower() or "a"
 
         # e: llama2-7b, \n\
-        
+        llm_enter = "e"
         args['llm'] = option_table["llm"][llm_enter]
         
         # if llm_enter == "e":

@@ -18,7 +18,12 @@ def main():
 
     LF_saving_parent_dir = os.path.join(LF_saving_parent_dir, args["codellm"])
     if not os.path.exists(LF_saving_parent_dir):
-        os.mkdir(LF_saving_parent_dir)
+        # Loại bỏ ký tự không hợp lệ trong tên thư mục (như dấu :)
+        LF_saving_parent_dir = LF_saving_parent_dir.replace(":", "_")
+
+        # Tạo toàn bộ cây thư mục nếu chưa tồn tại
+        os.makedirs(LF_saving_parent_dir, exist_ok=True)
+
         
     py_file_count = len([f for f in os.listdir(LF_saving_parent_dir) if f.endswith('.py')])
     args["LF_saving_exact_dir"] = LF_saving_parent_dir
