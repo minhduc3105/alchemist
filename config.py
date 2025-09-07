@@ -147,13 +147,13 @@ def collect_args():
     ###########################################################
     if mode_enter == "b":
         
-        llm_enter = custom_input("\nSelect the model to use for prior knowledge generation. Choices: \n\
-            a: gpt-3.5-turbo (gpt-3.5-turbo-0125), \n\
-            b: gpt-4.1, \n\
-            c: claude 2.1 (claude-2.1), \n\
-            d: claude 3 Sonnet (claude-3-sonnet-20240229), \n\
-            (leave blank for default 'gpt-3.5-turbo')\n\
-            Enter: ").strip().lower() or "a"
+        # llm_enter = custom_input("\nSelect the model to use for prior knowledge generation. Choices: \n\
+        #     a: gpt-3.5-turbo (gpt-3.5-turbo-0125), \n\
+        #     b: gpt-4.1, \n\
+        #     c: claude 2.1 (claude-2.1), \n\
+        #     d: claude 3 Sonnet (claude-3-sonnet-20240229), \n\
+        #     (leave blank for default 'gpt-3.5-turbo')\n\
+        #     Enter: ").strip().lower() or "a"
 
         # e: llama2-7b, \n\
         llm_enter = "e"
@@ -166,13 +166,13 @@ def collect_args():
     ###########################################################
     if mode_enter == "c":
 
-        llm_enter = custom_input("\nSelect the model to use for prior knowledge generation. Choices: \n\
-            a: gpt-3.5-turbo (gpt-3.5-turbo-0125), \n\
-            b: gpt-4.1, \n\
-            c: claude 2.1 (claude-2.1), \n\
-            d: claude 3 Sonnet (claude-3-sonnet-20240229), \n\
-            (leave blank for default 'gpt-3.5-turbo')\n\
-            Enter: ").strip().lower() or "a"
+        # llm_enter = custom_input("\nSelect the model to use for prior knowledge generation. Choices: \n\
+        #     a: gpt-3.5-turbo (gpt-3.5-turbo-0125), \n\
+        #     b: gpt-4.1, \n\
+        #     c: claude 2.1 (claude-2.1), \n\
+        #     d: claude 3 Sonnet (claude-3-sonnet-20240229), \n\
+        #     (leave blank for default 'gpt-3.5-turbo')\n\
+        #     Enter: ").strip().lower() or "a"
 
         # e: llama2-7b, \n\
         llm_enter = "e"
