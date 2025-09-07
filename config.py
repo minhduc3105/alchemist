@@ -76,31 +76,32 @@ def collect_args():
         option_table = json.load(f)
 
     ###########################################################
-    task_enter = custom_input("\nSpecify the dataset you are playing with. We have several default choices: \n\
-        a. youtube (spam review classification), \n\
-        b. sms (spam text classification), \n\
-        c. imdb (sentiment classification), \n\
-        d. yelp (sentiment classification), \n\
-        e. agnews (topic classificaiton), \n\
-        f. medabs (topic classification), \n\
-        g. cancer (topic classification), \n\
-        h. reddit (topic classification), \n\
-        i. french (sentiment classification), \n\
-        j. finance (sentiment classification), \n\
-        k. clickbait (), \n\
-        l. claude (), \n\
-        m. chemprot (), \n\
-        n. massive (), \n\
-        o. paper (), \n\
-        p. pubmed (), \n\
-        (leave blank for default 'youtube'), \n\
-        Enter: ").strip().lower() or "a"
+    # task_enter = custom_input("\nSpecify the dataset you are playing with. We have several default choices: \n\
+    #     a. youtube (spam review classification), \n\
+    #     b. sms (spam text classification), \n\
+    #     c. imdb (sentiment classification), \n\
+    #     d. yelp (sentiment classification), \n\
+    #     e. agnews (topic classificaiton), \n\
+    #     f. medabs (topic classification), \n\
+    #     g. cancer (topic classification), \n\
+    #     h. reddit (topic classification), \n\
+    #     i. french (sentiment classification), \n\
+    #     j. finance (sentiment classification), \n\
+    #     k. clickbait (), \n\
+    #     l. claude (), \n\
+    #     m. chemprot (), \n\
+    #     n. massive (), \n\
+    #     o. paper (), \n\
+    #     p. pubmed (), \n\
+    #     (leave blank for default 'youtube'), \n\
+    #     Enter: ").strip().lower() or "a"
 
     # i. trec (question classification), \n\
     # j. spouse (relation classificaiton), \n\
     # k. cdr (relation classification), \n\
     # l. semeval (relation classification), \n\
     # m. chemprot (relation classification), \n\
+    task_enter = "e"
     
     if task_enter not in option_table["dataset"]:
         raise NotImplementedError("You are playing with a new dataset!")
