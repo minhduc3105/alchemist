@@ -93,7 +93,21 @@ class BaseMode:
         
         with open(LF_file_path, "w", encoding="utf-8") as file:
             print(f"Synthesized LF is saving to {LF_saving_exact_dir} and named as 'LF{LF_count + 1}.py'.")
-            file.write("\'\'\'\n" + self.final_prompt + "\n\'\'\'\n" + self.token_report + "\n" + self.estimated_cost_report + "\n\n" + self.synthesized_labeling_function + "\n")
+            token_report = getattr(self, "token_report", "")
+            estimated_cost_report = getattr(self, "estimated_cost_report", "")
+
+            file.write(
+                "'''\n"
+                + self.final_prompt
+                + "\n'''\n"
+                + token_report
+                + "\n"
+                + estimated_cost_report
+                + "\n\n"
+                + self.synthesized_labeling_function
+                + "\n"
+            )
+
 
     def run(self):
         raise NotImplementedError("The run method must be implemented by subclasses.")
