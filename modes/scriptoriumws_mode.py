@@ -2,7 +2,6 @@ import os
 import torch
 from openai import OpenAI
 from anthropic import Anthropic
-import dashscope 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from config import custom_input
 from config import OPENAI_API_KEY, ANTHROPIC_API_KEY, QWEN_API_KEY
