@@ -44,6 +44,7 @@ def get_dataset_type(dataset_name):
 
 
 def load_dataset(data_home, dataset, dataset_type=None, extract_feature=False, extract_fn=None, label_num=None, **kwargs):
+    print(data_home, dataset, dataset_type)
     if dataset_type is None:
         dataset_class = get_dataset_type(dataset)
     else:
