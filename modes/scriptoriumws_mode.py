@@ -19,14 +19,15 @@ class ScriptoriumWSMode(BaseMode):
 
         # ✅ Nếu là qwen_local thì load model HuggingFace
         if self.codellm_choice.startswith("qwen-local"):
-            model_id = "Qwen/Qwen2-VL-7B-Instruct"   # ✅ chọn bản nhẹ
+            model_id = "Qwen/Qwen2-7B-Instruct"   # model text-only
             device = "cuda" if torch.cuda.is_available() else "cpu"
             self.tokenizer = AutoTokenizer.from_pretrained(model_id)
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_id,
-                torch_dtype=torch.float16 if device=="cuda" else torch.float32,
+                torch_dtype=torch.float16 if device == "cuda" else torch.float32,
                 device_map="auto"
             )
+
 
     
     def _load_qwen_local(self, model_name: str):
