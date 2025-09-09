@@ -33,6 +33,41 @@ class Labeler:
                              "Model" : args["codellm"]}
         if "prior_type" in args:
             self.final_result["Heuristic Mode"] = args["prior_type"]
+
+
+
+    def save_labels(self):
+        # ==== Save weak labels ====
+        weak_out = []
+        for ex, weak in zip(self.train_data.examples, self.train_data.weak_labels):
+            weak_out.append({
+                "text": ex["text"],
+                "weak_labels": weak.tolist() if isinstance(weak, np.ndarray) else weak
+            })
+        with open("train_weak_labels.json", "w", encoding="utf-8") as f:
+            json.dump(weak_out, f, ensure_ascii=False, indent=2)
+
+        # ==== Save soft labels (final MV/Snorkel) ====
+        # best label model đã được chọn trong label_time(), ta có thể predict lại
+        best_label_model = self.get_model("MV")  # hoặc "Snorkel" nếu bạn muốn
+        best_label_model.fit(
+            dataset_train=self.train_data,
+            dataset_valid=self.valid_data,
+            metric="f1_macro"
+        )
+        soft_labels = best_label_model.predict(self.train_data)
+
+        soft_out = []
+        for ex, soft in zip(self.train_data.examples, soft_labels):
+            soft_out.append({
+                "text": ex["text"],
+                "soft_label": soft.tolist() if isinstance(soft, np.ndarray) else soft
+            })
+        with open("train_soft_labels.json", "w", encoding="utf-8") as f:
+            json.dump(soft_out, f, ensure_ascii=False, indent=2)
+
+
+
         
     def get_model(self, name):
 
@@ -330,6 +365,8 @@ class Labeler:
         
         ## run label model and end model ##
         self.label_time()
+
+        self.save_labels()
 
         ## get total cost of LFs ##
         self.get_total_cost()
