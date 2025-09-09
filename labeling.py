@@ -121,12 +121,12 @@ class Labeler:
         return file_path_collection
         
     def get_weak_labels(self, data, type):
-        
         module_spec = importlib.util.spec_from_loader("temp_module", loader=None)
         module = importlib.util.module_from_spec(module_spec)
 
         weak_label_matrix = []
-        
+        allowed_labels = set(range(self.train_data.num_classes))  # chỉ nhãn hợp lệ
+
         for file_path in self.file_path_collection:
             print(f"Read {file_path} for {type} data")
             with open(file_path, "r", encoding="utf-8") as f:
@@ -142,14 +142,18 @@ class Labeler:
                 for i in range(len(data.examples)):
                     example = data.examples[i]["text"]
                     weak_label = label_function(example)
+                    # Filter nhãn ngoài tập hợp
+                    if weak_label not in allowed_labels:
+                        weak_label = -1
                     weak_labels.append(weak_label)
                 weak_label_matrix.append(weak_labels)
-            except:
-                self.logger.error(f"Error in {file_path}")
+            except Exception as e:
+                self.logger.error(f"Error in {file_path}: {e}")
                 
         weak_label_matrix = np.array(weak_label_matrix).T
         
         return weak_label_matrix
+
 
     def get_LF_summary(self):
 
