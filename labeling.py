@@ -301,7 +301,7 @@ class Labeler:
         
         ## log result saved place ##
         if not os.path.exists(self.args["exp_result_saved_path"]):
-            os.mkdir(self.args["exp_result_saved_path"], exist_ok=True)
+            os.makedirs(self.args["exp_result_saved_path"], exist_ok=True)
         
         if self.args["mode"] == "ScriptoriumWS":
             log_file_name = os.path.join(self.args["exp_result_saved_path"], self.args["mode"] + "_" + self.args["codellm"] + ".txt")
