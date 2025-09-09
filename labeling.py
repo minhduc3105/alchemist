@@ -121,11 +121,14 @@ class Labeler:
         return file_path_collection
         
     def get_weak_labels(self, data, type):
+    
         module_spec = importlib.util.spec_from_loader("temp_module", loader=None)
         module = importlib.util.module_from_spec(module_spec)
 
         weak_label_matrix = []
-        allowed_labels = set(range(self.train_data.num_classes))  # chỉ nhãn hợp lệ
+
+        # Nếu biết số nhãn (agnews có 4 nhãn: 0,1,2,3)
+        allowed_labels = set(range(4))  # <- sửa theo dataset của bạn
 
         for file_path in self.file_path_collection:
             print(f"Read {file_path} for {type} data")
