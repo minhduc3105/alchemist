@@ -372,7 +372,7 @@ class Labeler:
         self.get_total_cost()
 
         ## show final results ##
-        # pp = pprint.PrettyPrinter(depth=4)
+        # pp = pprint.PrettyPrinter(depth=
         # pp.pprint(self.final_result)
 
         if self.args["mode"] == "ScriptoriumWS":
